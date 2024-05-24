@@ -8,23 +8,25 @@
   const factionsPromise = listFactions(modelExplorerGraphQLClient);
 </script>
 
-<table>
-  <thead>
-    <th>ID</th>
-    <th>Name</th>
-  </thead>
-  <tbody>
-    {#await factionsPromise}
-      Loading factions...
-    {:then factions}
-      {#each factions.factions as { id, name }, i}
-        <tr>
-          <td>{id}</td>
-          <td>{name}</td>
-        </tr>
-      {/each}
-    {:catch someError}
-      System error: {someError.message}.
-    {/await}
-  </tbody>
-</table>
+<div>
+  {#await factionsPromise}
+    Loading factions...
+  {:then factions}
+    <table>
+      <thead>
+        <th>ID</th>
+        <th>Name</th>
+      </thead>
+      <tbody>
+        {#each factions.factions as { id, name }, i}
+          <tr>
+            <td>{id}</td>
+            <td>{name}</td>
+          </tr>
+        {/each}
+      </tbody>
+    </table>
+  {:catch someError}
+    System error: {someError.message}.
+  {/await}
+</div>
