@@ -2,8 +2,9 @@
   import FactionsTable from './lib/views/FactionsTable.svelte';
   import { ApolloClient, InMemoryCache } from '@apollo/client/core';
   
+  const serverDomain = import.meta.env.VITE_MODEL_EXPLORER_SERVER_DOMAIN;
   const modelExplorerGraphQLClient = new ApolloClient({
-    uri: 'http://localhost:3000/graphql',
+    uri: serverDomain + '/graphql',
     cache: new InMemoryCache(),
   });
 </script>
