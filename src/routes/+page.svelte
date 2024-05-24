@@ -3,8 +3,11 @@
   import { ApolloClient, InMemoryCache } from '@apollo/client/core';
   
   const serverDomain = import.meta.env.VITE_MODEL_EXPLORER_SERVER_DOMAIN;
+  const serverUrl = serverDomain + '/graphql';
+  console.log("Connecting to server at domain: " + serverDomain);
+  console.log("Connecting to server at URL: " + serverUrl);
   const modelExplorerGraphQLClient = new ApolloClient({
-    uri: serverDomain + '/graphql',
+    uri: serverUrl,
     cache: new InMemoryCache(),
   });
 </script>
