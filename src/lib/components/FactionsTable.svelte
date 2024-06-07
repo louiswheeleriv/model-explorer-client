@@ -3,9 +3,9 @@
   import listFactions from '../graphql/list_factions';
 
   // Component params
-  export let modelExplorerGraphQLClient: ApolloClient<object>;
+  export let client: ApolloClient<object>;
 
-  const factionsPromise = listFactions(modelExplorerGraphQLClient);
+  const factionsPromise = listFactions(client);
 </script>
 
 <div>
