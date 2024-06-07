@@ -1,6 +1,5 @@
 <script>
   import Input from '$lib/components/Input.svelte';
-  import Button from '$lib/components/Button.svelte';
   let username = '';
   let email = '';
   let password = '';
@@ -26,5 +25,5 @@
   {#if confirmPassword !== "" && confirmPassword !== password}
       <p class="text-red-600 text-sm font-semibold">Passwords don't match</p>
   {/if}
-  <Button type="submit" disabled="{validatePassword(password, confirmPassword)}">Sign Up</Button>
+  <button type="submit" disabled="{validatePassword(password, confirmPassword)}">Sign Up</button>
 </form>
