@@ -6,7 +6,7 @@ const serverUrl = serverDomain + '/graphql';
 const client = new ApolloClient({
   uri: serverUrl,
   cache: new InMemoryCache(),
-  // credentials: 'include'
+  credentials: 'include'
 });
 
 export default client;

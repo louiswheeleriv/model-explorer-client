@@ -23,11 +23,5 @@ export default async function signIn(client: ApolloClient<object>, username: Str
     },
     fetchPolicy: "no-cache",
   });
-
-  if (data) {
-    return data;
-  } else {
-    debugger;
-    throw new Error('Unable to sign in!');
-  }
+  return data;
 }
